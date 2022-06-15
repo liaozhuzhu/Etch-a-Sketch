@@ -1,0 +1,9 @@
+.board {
+    outline: 5px solid red;
+    height: 100px;
+}
+
+.pixel {
+    outline: 5px solid blue;
+    height: 100px;
+}
