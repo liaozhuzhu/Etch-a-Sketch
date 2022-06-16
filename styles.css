@@ -6,7 +6,8 @@ body {
 
 /* Settings */
 .setting {
-    display: block;
+    display: flex;
+    flex-direction: column;
     outline: 5px solid black;
     margin: 50px;
     padding: 10px;
@@ -14,13 +15,15 @@ body {
 }
 
 #color-selector {
-    width: 100px;
+    width: 120px;
     margin: 10px;
 }
 
 #clear {
     margin: 10px;
 }
+
+
 
 /* Board */
 .board {
