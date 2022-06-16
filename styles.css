@@ -6,12 +6,20 @@ body {
 
 /* Settings */
 .setting {
+    display: block;
     outline: 5px solid black;
     margin: 50px;
+    padding: 10px;
+    text-align: center;
 }
 
-#color-wheel {
+#color-selector {
     width: 100px;
+    margin: 10px;
+}
+
+#clear {
+    margin: 10px;
 }
 
 /* Board */

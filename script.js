@@ -1,6 +1,17 @@
 let board = document.querySelector("#board-container");
+let currSize = 16;
 let currColor = "#000000";
+let colorSelect = document.getElementById("color-selector");
 let mousePress = false;
+let clearBtn = document.getElementById("clear");
+
+// Clear Everything
+clearBtn.addEventListener("click", function() {
+    let allPixel = document.getElementsByClassName("pixel");
+    for(let i = 0; i < allPixel.length; i++) {
+        allPixel[i].style.backgroundColor = "#FFFFFF";
+    }
+});
 
 // Check Mouse Down or Up
 document.body.onmousedown = function() { 
@@ -11,11 +22,16 @@ document.body.onmouseup = function() {
     mousePress = false;
 }
 
-// Choose Color 
-function colorPick(color) {
-    console.log("#34ebde");
-    color = "#34ebde";
+// Choose Color
+function setColor (color) {
+    currColor = color;
 }
+
+colorSelect.oninput = (e) => setColor(e.target.value);
+
+// Set Size of Grid
+
+
 // Fill Grid Based on Size 
 function fillGrid(size) {
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`
@@ -33,8 +49,9 @@ function fillGrid(size) {
 // Color Each Pixel
 function colorPixel(e) {
     if (e.type == "mouseover" && mousePress) {
+        console.log(currColor);
         e.target.style.backgroundColor = currColor;
     } 
 }
 
-fillGrid(16);
+fillGrid(currSize);
