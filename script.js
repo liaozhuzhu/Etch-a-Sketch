@@ -1,5 +1,8 @@
 let board = document.querySelector("#board-container");
 let currSize = document.getElementById("size-selector").value;
+let sizeSelect = document.getElementById("size-selector");
+let sizeValue = document.getElementById("size-value");
+sizeValue.innerHTML = currSize;
 let currColor = "#000000";
 let colorSelect = document.getElementById("color-selector");
 let mousePress = false;
@@ -15,15 +18,21 @@ document.body.onmouseup = function() {
 }
 
 // Choose Color
-function setColor (color) {
-    currColor = colorSelect.value;
+colorSelect.oninput = function() {
+    currColor = this.value;
 }
 
-//colorSelect.oninput = (e) => setColor(e.target.value);
+// Choose Size
+sizeSelect.oninput = function() {
+    sizeValue.innerHTML = this.value;
+    currSize = sizeSelect.value;
+    reloadGrid();
+}
 
-// Set Size of Grid
-function setSize() {
-
+// Reload Grid
+function reloadGrid() {
+    clearGrid();
+    fillGrid(currSize);
 }
 
 // Fill Grid Based on Size 
@@ -48,21 +57,13 @@ function colorPixel(e) {
     }
 }
 
-// Reload Grid
-function reloadGrid() {
-    
-}
-
 // Clear Function
-function clear() {
-    let allPixel = document.getElementsByClassName("pixel");
-    for(let i = 0; i < allPixel.length; i++) {
-        allPixel[i].style.backgroundColor = "#FFFFFF";
-    }
+function clearGrid() {
+    board.innerHTML = "";
 }
 
 // Clear Button
-clearBtn.addEventListener("click", clear);
+clearBtn.addEventListener("click", reloadGrid);
 
 window.onload = () => {
     fillGrid(currSize);
