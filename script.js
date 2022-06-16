@@ -1,14 +1,32 @@
 let board = document.querySelector("#board-container");
+
 let currSize = document.getElementById("size-selector").value;
 let sizeSelect = document.getElementById("size-selector");
 let sizeValue = document.getElementById("size-value");
 sizeValue.innerHTML = currSize;
-let currColor = "#000000";
-let colorSelect = document.getElementById("color-selector");
-let mousePress = false;
+
+// Paint or Erase
+let paintBtn = document.getElementById("paint");
+let eraseBtn = document.getElementById("erase");
 let clearBtn = document.getElementById("clear");
+let isPaint = true;
+paintBtn.style.backgroundColor = "lightgray";
+
+function erase() {
+    isPaint = false;
+    eraseBtn.style.backgroundColor = "lightgray";
+    paintBtn.style.backgroundColor = "";
+}
+
+function paint() {
+    isPaint = true;
+    paintBtn.style.backgroundColor = "lightgray";
+    eraseBtn.style.backgroundColor = "";
+}
 
 // Check Mouse Down or Up
+let mousePress = false;
+
 document.body.onmousedown = function() { 
     mousePress = true;
 }
@@ -18,6 +36,9 @@ document.body.onmouseup = function() {
 }
 
 // Choose Color
+let currColor = "#000000";
+let colorSelect = document.getElementById("color-selector");
+
 colorSelect.oninput = function() {
     currColor = this.value;
 }
@@ -53,7 +74,12 @@ function fillGrid(size) {
 // Color Each Pixel
 function colorPixel(e) {
     if (e.type != 'mouseover' || mousePress) {
-        e.target.style.backgroundColor = currColor;
+        if (isPaint) {
+            e.target.style.backgroundColor = currColor;
+        }
+        else {
+            e.target.style.backgroundColor  = "";
+        }
     }
 }
 
@@ -62,7 +88,9 @@ function clearGrid() {
     board.innerHTML = "";
 }
 
-// Clear Button
+// Buttons
+paintBtn.addEventListener("click", paint);
+eraseBtn.addEventListener("click", erase);
 clearBtn.addEventListener("click", reloadGrid);
 
 window.onload = () => {
