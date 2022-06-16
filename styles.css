@@ -3,12 +3,25 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+/* Settings */
+.setting {
+    outline: 5px solid black;
+    margin: 50px;
+}
+
+#color-wheel {
+    width: 100px;
+}
+
+/* Board */
 .board {
     display: grid;
     background-color: #fff;
-    outline: 5px solid red;
+    outline: 5px solid black;
     width: 500px;
     height: 500px;
+    margin: 50px;
 }
 
 .pixel {
