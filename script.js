@@ -1,5 +1,5 @@
 let body = document.body;
-let board = document.querySelector("#board-container");
+let board = document.getElementById("board-container");
 
 // Paint or Erase
 let paintBtn = document.getElementById("paint");
@@ -54,21 +54,6 @@ sizeSelect.oninput = function() {
     reloadGrid();
 }
 
-// Toggle Grid
-let gridBtn = document.getElementById("grid-toggle");
-let pixelId = document.getElementById("pixel-id");
-let outlineOn = false;
-
-function toggleGrid() {
-    if (outlineOn == false) {
-        pixelId.style.border = "1px solid #000000";
-        outlineOn = true;
-    }
-    else {
-        pixelId.style.border = "none";
-    }
-}
-
 // Reload Grid
 function reloadGrid() {
     clearGrid();
@@ -76,18 +61,19 @@ function reloadGrid() {
 }
 
 // Fill Grid Based on Size 
+let getPixel;
 function fillGrid(size) {
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
   
     for (let i = 0; i < size * size; i++) {
-      const pixel = document.createElement("div");
+      let pixel = document.createElement("div");
       pixel.classList.add("pixel");
       pixel.setAttribute("id", "pixel-id");
-      pixel.setAttribute("draggable", false);
       pixel.addEventListener("mouseover", colorPixel);
       pixel.addEventListener("mousedown", colorPixel);
       board.appendChild(pixel);
+      getPixel = document.getElementsByClassName("pixel");
     }
 }
 
@@ -103,19 +89,46 @@ function colorPixel(e) {
     }
 }
 
+// Toggle Grid
+let gridBtn = document.getElementById("grid-toggle");
+let outlineOn = false;
+
+function toggleGrid() {
+    if (outlineOn == false) {
+        for(let i = 0; i < getPixel.length; i++) {
+            getPixel[i].style.border = "1px solid #000000";
+        }
+        outlineOn = true;
+    }
+    else {
+        for(let i = 0; i < getPixel.length; i++) {
+            getPixel[i].style.border = "none";
+        }
+        outlineOn = false;
+    }
+}
+
 // Clear Function
 function clearGrid() {
     board.innerHTML = "";
 }
+
+/*
+// Save Painting
+let downloadBtn = document.getElementById("download");
+let canvas = board.getContext('2d');
+function downloadImage() {
+    window.open('', canvas.toDataURL());
+}
+*/
 
 // Buttons
 paintBtn.addEventListener("click", paint);
 eraseBtn.addEventListener("click", erase);
 clearBtn.addEventListener("click", reloadGrid);
 gridBtn.addEventListener("click", toggleGrid);
-
+//downloadBtn.addEventListener("click", downloadImage);
 
 window.onload = () => {
     fillGrid(currSize);
-    toggleGrid(outlineOn);
 }
