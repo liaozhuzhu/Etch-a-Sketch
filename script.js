@@ -1,3 +1,4 @@
+let body = document.getElementsByTagName("body")[0];
 let board = document.querySelector("#board-container");
 
 let currSize = document.getElementById("size-selector").value;
@@ -16,6 +17,7 @@ function erase() {
     isPaint = false;
     eraseBtn.style.backgroundColor = "lightgray";
     paintBtn.style.backgroundColor = "";
+    board.style.cursor = url("images/eraser.png"), auto;
 }
 
 function paint() {
