@@ -28,16 +28,6 @@ body {
     margin: 10px;
 }
 
-/* Save Image */
-.save {
-    display: flex;
-    flex-direction: column;
-    outline: 5px solid black;
-    margin: 50px;
-    padding: 10px;
-    text-align: center;
-}
-
 /* Board */
 .board {
     display: grid;
