@@ -7,6 +7,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: url("images/eraser.png"), auto;
 }
 
 /* Settings */
