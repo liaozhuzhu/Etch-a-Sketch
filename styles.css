@@ -32,12 +32,14 @@ body {
 .board {
     display: grid;
     background-color: #fff;
-    outline: 5px solid black;
+    border: 5px solid black;
     width: 500px;
     height: 500px;
     margin: 50px;
 }
 
+/*
 .pixel {
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    border: 1px solid #000;
 }
+*/
