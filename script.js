@@ -113,21 +113,11 @@ function clearGrid() {
     board.innerHTML = "";
 }
 
-/*
-// Save Painting
-let downloadBtn = document.getElementById("download");
-let canvas = board.getContext('2d');
-function downloadImage() {
-    window.open('', canvas.toDataURL());
-}
-*/
-
 // Buttons
 paintBtn.addEventListener("click", paint);
 eraseBtn.addEventListener("click", erase);
 clearBtn.addEventListener("click", reloadGrid);
 gridBtn.addEventListener("click", toggleGrid);
-//downloadBtn.addEventListener("click", downloadImage);
 
 window.onload = () => {
     fillGrid(currSize);
