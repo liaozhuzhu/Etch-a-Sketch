@@ -17,13 +17,14 @@ function erase() {
     isPaint = false;
     eraseBtn.style.backgroundColor = "lightgray";
     paintBtn.style.backgroundColor = "";
-    body.style.cursor = 'url(images/eraser.png)', 'auto';
+    body.style.cursor = "url('images/eraser.png'), auto";
 }
 
 function paint() {
     isPaint = true;
     paintBtn.style.backgroundColor = "lightgray";
     eraseBtn.style.backgroundColor = "";
+    document.body.style.cursor = "url('images/paint.png'), auto"
 }
 
 // Check Mouse Down or Up
