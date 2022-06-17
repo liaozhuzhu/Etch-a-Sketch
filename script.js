@@ -12,6 +12,7 @@ let eraseBtn = document.getElementById("erase");
 let clearBtn = document.getElementById("clear");
 let isPaint = true;
 paintBtn.style.backgroundColor = "lightgray";
+document.body.style.cursor = "url('images/paint.png'), auto";
 
 function erase() {
     isPaint = false;
@@ -24,7 +25,7 @@ function paint() {
     isPaint = true;
     paintBtn.style.backgroundColor = "lightgray";
     eraseBtn.style.backgroundColor = "";
-    document.body.style.cursor = "url('images/paint.png'), auto"
+    document.body.style.cursor = "url('images/paint.png'), auto";
 }
 
 // Check Mouse Down or Up
