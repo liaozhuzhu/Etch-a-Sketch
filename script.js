@@ -6,20 +6,25 @@ let paintBtn = document.getElementById("paint");
 let eraseBtn = document.getElementById("erase");
 let clearBtn = document.getElementById("clear");
 let isPaint = true;
-paintBtn.style.backgroundColor = "lightgray";
+paintBtn.style.backgroundColor = "#00a8e8";
+paintBtn.style.color = "#FFFFFF";
 document.body.style.cursor = "url('images/paint.png'), auto";
 
 function erase() {
     isPaint = false;
-    eraseBtn.style.backgroundColor = "lightgray";
+    eraseBtn.style.backgroundColor = "#00a8e8";
+    eraseBtn.style.color = "#FFFFFF";
     paintBtn.style.backgroundColor = "";
+    paintBtn.style.color = "";
     body.style.cursor = "url('images/eraser.png'), auto";
 }
 
 function paint() {
     isPaint = true;
-    paintBtn.style.backgroundColor = "lightgray";
+    paintBtn.style.backgroundColor = "#00a8e8";
+    paintBtn.style.color = "#FFFFFF";
     eraseBtn.style.backgroundColor = "";
+    eraseBtn.style.color = "";
     document.body.style.cursor = "url('images/paint.png'), auto";
 }
 

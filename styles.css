@@ -20,13 +20,28 @@ body {
     border-radius: 10px;
     margin: 50px;
     padding: 10px;
-    text-align: center;
+    align-items: center;
 }
 
 #color-selector {
-    width: 120px;
-    margin: 10px;
-    border-radius: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+    border: none;
+    cursor: pointer;
+}
+
+#color-selector::-webkit-color-swatch {
+    border-radius: 50%;
+    border: 3px solid #000000;
+}
+
+#color-selector::-moz-color-swatch {
+    border-radius: 50%;
+    border: 5px solid #000000;
 }
 
 #color-selector:hover {
@@ -55,10 +70,29 @@ body {
     margin: 10px;
     background-color: #fff;
     border-radius: 5px;
+    width: 100px;
 }
 
 .setting-button:hover {
     transform: scale(1.1);
+    color: #FFFFFF;
+}
+
+#paint:hover {
+    background-color: #ff206e;
+}
+
+#erase:hover {
+    background-color: #2ec4b6;
+}
+
+#clear:hover {
+    background-color: #e5383b;
+}
+
+#grid-toggle:hover {
+    background-color: #ccc5b9;
+    color: #000000;
 }
 
 /* Board */
