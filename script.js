@@ -75,6 +75,16 @@ function fillGrid(size) {
       board.appendChild(pixel);
       getPixel = document.getElementsByClassName("pixel");
     }
+    if (outlineOn == true) {
+        for(let i = 0; i < getPixel.length; i++) {
+            getPixel[i].style.border = "1px solid #000000";
+        }
+    }
+    else {
+        for(let i = 0; i < getPixel.length; i++) {
+            getPixel[i].style.border = "none";
+        }
+    }
 }
 
 // Color Each Pixel
