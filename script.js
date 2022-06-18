@@ -123,11 +123,21 @@ function clearGrid() {
     board.innerHTML = "";
 }
 
+// Save Image
+let saveBtn = document.getElementById("save");
+function saveImage() {
+    window.scrollTo(0,0);
+    html2canvas(board).then(function (canvas) {
+        console.log(canvas.toDataURL("image/jpg", 0.9));
+    });
+}
+
 // Buttons
 paintBtn.addEventListener("click", paint);
 eraseBtn.addEventListener("click", erase);
 clearBtn.addEventListener("click", reloadGrid);
 gridBtn.addEventListener("click", toggleGrid);
+saveBtn.addEventListener("click", saveImage);
 
 window.onload = () => {
     fillGrid(currSize);

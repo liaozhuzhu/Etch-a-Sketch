@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
 * {
     user-select: none;
     -webkit-user-select: none;
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -26,6 +29,7 @@ body {
 
 .setting-button {
     margin: 10px;
+    background-color: #fff;
 }
 
 /* Board */
@@ -36,6 +40,7 @@ body {
     width: 500px;
     height: 500px;
     margin: 50px;
+    box-shadow: unset !important;
 } 
 
 /* Mobile */
