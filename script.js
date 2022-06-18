@@ -79,7 +79,7 @@ function fillGrid(size) {
         for(let i = 0; i < getPixel.length; i++) {
             getPixel[i].style.border = "1px solid #000000";
         }
-    }
+    } 
     else {
         for(let i = 0; i < getPixel.length; i++) {
             getPixel[i].style.border = "none";
