@@ -98,17 +98,11 @@ body {
 }
 
 /* Board */
-.container {
-    display: inline-flex;
-    border: 5px solid #000000;
-    justify-content: center;
-    align-items: center;
-}
-
 .board {
     display: grid;
     width: 500px;
     height: 500px;
+    border: 5px solid #000000;
 } 
 
 /* Mobile */
@@ -128,7 +122,6 @@ body {
         width: 300px;
     }
 }
-
 
 @media only screen and (max-width: 767px)
 {
