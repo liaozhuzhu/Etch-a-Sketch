@@ -37,3 +37,32 @@ body {
     height: 500px;
     margin: 50px;
 } 
+
+/* Mobile */
+@media only screen and (max-width: 767px)
+{
+    body
+    {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 767px)
+{
+    .setting
+    {
+        display: inline-block;
+        width: 300px;
+    }
+}
+
+
+@media only screen and (max-width: 767px)
+{
+    .board
+    {
+        width: 350px;
+        height: 350px;
+        margin: 30px;
+    }
+}
