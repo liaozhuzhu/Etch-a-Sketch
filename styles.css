@@ -4,6 +4,8 @@
     user-select: none;
     -webkit-user-select: none;
     font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 body {
@@ -96,12 +98,17 @@ body {
 }
 
 /* Board */
+.container {
+    display: inline-flex;
+    border: 5px solid #000000;
+    justify-content: center;
+    align-items: center;
+}
+
 .board {
     display: grid;
-    border: 5px solid black;
     width: 500px;
     height: 500px;
-    margin: 50px;
 } 
 
 /* Mobile */
