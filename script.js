@@ -127,8 +127,11 @@ function clearGrid() {
 let saveBtn = document.getElementById("save");
 function saveImage() {
     window.scrollTo(0,0);
-    html2canvas(board).then(function (canvas) {
-        console.log(canvas.toDataURL("image/jpg", 0.9));
+    html2canvas(board, { letterRendering: 1,useCORS: true } ).then(function(canvas) {
+        const a = document.createElement('a')
+        a.href=canvas.toDataURL("image/png")
+        a.download="canvas.png"
+        a.click()
     });
 }
 
