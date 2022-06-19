@@ -120,6 +120,7 @@ body {
         display: flex;
         flex-direction: column;
         overflow: hidden;
+        text-align: center;
     }
 }
 
@@ -127,10 +128,11 @@ body {
 {
     .setting
     {
-        display: inline-block;
+        display: block;
+        text-align: center;
         width: 300px;
-        position: relative;
-        bottom: 30px;
+        margin: 0px;
+        margin-top: 10px;
     }
 }
 
@@ -145,11 +147,9 @@ body {
 @media only screen and (max-width: 767px)
 {
     #save-image
-    {
+    {   
         width: 30px;
         height: 30px;
-        position: relative;
-        top: 270px;
     }
 }
 
@@ -159,9 +159,5 @@ body {
     {
         width: 350px;
         height: 350px;
-        margin: 30px;
-        margin-top: 0px;
-        position: relative;
-        bottom: 130px;
     }
 }
