@@ -25,6 +25,15 @@ body {
     align-items: center;
 }
 
+.setting-misc {
+    display: flex;
+    outline: 2px solid black;
+    border-radius: 10px;
+    margin: 50px;
+    padding: 10px;
+    align-items: center;
+}
+
 #color-selector {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -55,8 +64,6 @@ body {
     background-repeat:no-repeat;
     border: none;
     cursor:pointer;
-    overflow: hidden;
-    outline:none;
 }
 
 #save-image {
@@ -108,9 +115,11 @@ body {
 /* Mobile */
 @media only screen and (max-width: 767px)
 {
-    body
+    html, body
     {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
     }
 }
 
@@ -120,6 +129,27 @@ body {
     {
         display: inline-block;
         width: 300px;
+        position: relative;
+        bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 767px)
+{
+    .setting-misc
+    {
+        display: contents;
+    }
+}
+
+@media only screen and (max-width: 767px)
+{
+    #save-image
+    {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        top: 270px;
     }
 }
 
@@ -130,5 +160,8 @@ body {
         width: 350px;
         height: 350px;
         margin: 30px;
+        margin-top: 0px;
+        position: relative;
+        bottom: 130px;
     }
 }

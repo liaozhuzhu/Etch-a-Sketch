@@ -104,6 +104,8 @@ function colorPixel(e) {
     }
 }
 
+board.addEventListener("touchmove", colorPixel);
+
 // Toggle Grid
 let gridBtn = document.getElementById("grid-toggle");
 let outlineOn = false;
