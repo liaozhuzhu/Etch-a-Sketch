@@ -43,7 +43,7 @@ body {
     height: 100px;
     border: none;
     cursor: pointer;
-}
+} 
 
 #color-selector::-webkit-color-swatch {
     border-radius: 50%;

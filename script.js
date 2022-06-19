@@ -94,7 +94,7 @@ function fillGrid(size) {
 
 // Color Each Pixel
 function colorPixel(e) {
-    if (e.type != 'mouseover' || mousePress) {
+    if (e.type != "mouseover" || mousePress) {
         if (isPaint) {
             e.target.style.backgroundColor = currColor;
         }
